@@ -15,8 +15,8 @@ public class MainJobClass {
 	public final static String filePath = "File" + System.nanoTime();
 
 	public static void main(String[] args) {
-		innerJoin();
-		// groupBySum();
+		//innerJoin();
+		 groupBySum();
 	}
 
 	private static void groupBySum() {

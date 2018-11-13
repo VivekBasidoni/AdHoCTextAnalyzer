@@ -6,6 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+import com.driver.MainJobClass;
+
 public class ShuffleKeys implements Runnable {
 	String filePath;
 	boolean writeFile = false;
@@ -25,7 +27,7 @@ public class ShuffleKeys implements Runnable {
 		FileWriter fstream1 = null;
 		try {
 			scanner = new Scanner(file);
-			fstream1 = new FileWriter(file.getParentFile().getAbsolutePath() + "\\file" + fileCount++ + ".txt");
+			fstream1 = new FileWriter(MainJobClass.filePath + "\\file" + fileCount++ + ".txt");
 			out = new BufferedWriter(fstream1);
 			String lineOne = null;
 			double counter = 0;
