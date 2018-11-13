@@ -23,9 +23,9 @@ abstract class SplitText implements Runnable {
 	public void run() {
 		File file = new File(inputfile);
 		try {
-			Scanner scanner = new Scanner(file);
+			Scanner scanner = new Scanner(file, "utf-8");
 			int count = 0;
-			while (scanner.hasNextLine()) {
+			while (scanner.hasNext()) {
 				scanner.nextLine();
 				count++;
 			}

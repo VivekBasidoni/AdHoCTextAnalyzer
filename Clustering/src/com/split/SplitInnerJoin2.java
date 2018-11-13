@@ -9,7 +9,7 @@ public class SplitInnerJoin2 extends SplitText {
 
 	@Override
 	String getData(String data) {
-		String key = (data.split("\\,")[6]).replaceAll("[^a-zA-Z0-9]", "").toUpperCase();
+		String key = (data.split("\\;")[0]).replaceAll("[^a-zA-Z0-9]", "").toUpperCase();
 		return key + "&&" + "file2||" + data;
 	}
 

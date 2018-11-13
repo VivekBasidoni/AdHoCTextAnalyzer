@@ -11,9 +11,9 @@ import com.split.SplitTextJob;
 public class TestClass {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-		SplitTextJob splitTextJob = new SplitTextJob("Files//1500000 Sales Records.csv");
+		SplitTextJob splitTextJob = new SplitTextJob("Files//City.csv");
 		splitTextJob.splitTextJob(SplitInnerJoin.class);
-		SplitTextJob splitTextJob1 = new SplitTextJob("Files//1500000 Sales Records_1.csv");
+		SplitTextJob splitTextJob1 = new SplitTextJob("Files//Country.csv");
 		splitTextJob1.splitTextJob(SplitInnerJoin2.class);
 		SortAndMerge externalSort = new SortAndMerge();
 		externalSort.run();
