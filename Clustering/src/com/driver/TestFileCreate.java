@@ -1,4 +1,4 @@
-package com.externalsort;
+package com.driver;
 
 import java.io.BufferedWriter;
 import java.io.File;

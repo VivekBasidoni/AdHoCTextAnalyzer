@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-abstract class Function implements Runnable {
+public abstract class Function implements Runnable {
 
 	String filePath;
 	String opPath;

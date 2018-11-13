@@ -14,9 +14,14 @@ public class SortAndMerge {
 		super();
 	}
 
-	public void run() throws IOException {
-		File file = new File("Files");
-		sortFile(file);
+	public void run() {
+		try {
+			File file = new File("Files");
+			sortFile(file);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private void sortFile(File file) throws IOException {

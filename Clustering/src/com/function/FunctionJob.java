@@ -2,7 +2,7 @@ package com.function;
 
 import java.io.File;
 
-public class FunctionTest {
+public class FunctionJob {
 	public void applyFunction(Class<? extends Function> function) {
 		File file = new File("Files");
 		int fCount = 0;

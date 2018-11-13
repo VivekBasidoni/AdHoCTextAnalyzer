@@ -1,10 +1,12 @@
-package com.function;
+package com.functionclass;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
+
+import com.function.Function;
 
 public class FunctionInnerJoin extends Function {
 

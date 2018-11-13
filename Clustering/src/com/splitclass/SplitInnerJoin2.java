@@ -1,4 +1,6 @@
-package com.split;
+package com.splitclass;
+
+import com.split.SplitText;
 
 public class SplitInnerJoin2 extends SplitText {
 
@@ -8,7 +10,7 @@ public class SplitInnerJoin2 extends SplitText {
 	}
 
 	@Override
-	String getData(String data) {
+	public String getData(String data) {
 		String key = (data.split("\\;")[0]).replaceAll("[^a-zA-Z0-9]", "").toUpperCase();
 		return key + "&&" + "file2||" + data;
 	}
