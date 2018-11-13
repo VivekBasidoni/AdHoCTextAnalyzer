@@ -27,6 +27,8 @@ public class FunctionJob {
 				Thread.sleep(100);
 				System.out.println("----------------   Waiting to finish the thread    -------------------");
 				System.out.println(group.activeCount() + " Still pending");
+				System.out.println(group.getName() + " Running");
+
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
