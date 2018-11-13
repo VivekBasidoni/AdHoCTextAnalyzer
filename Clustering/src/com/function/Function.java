@@ -6,6 +6,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -59,8 +62,9 @@ public abstract class Function implements Runnable {
 			}
 			flushData(applyFunction(key, values));
 			bufferedReader.close();
-			file.delete();
 			bufferedWriter.close();
+			Path filePath = Paths.get(file.getPath());
+			Files.delete(filePath);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,7 +72,7 @@ public abstract class Function implements Runnable {
 
 	}
 
-	private void flushData(Map map) {
+	private void flushData(@SuppressWarnings("rawtypes") Map map) {
 		try {
 			File file = new File(opPath);
 

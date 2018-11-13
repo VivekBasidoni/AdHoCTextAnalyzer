@@ -2,9 +2,11 @@ package com.function;
 
 import java.io.File;
 
+import com.driver.MainJobClass;
+
 public class FunctionJob {
 	public void applyFunction(Class<? extends Function> function) {
-		File file = new File("Files");
+		File file = new File(MainJobClass.filePath);
 		int fCount = 0;
 		ThreadGroup group = null;
 		for (File f : file.listFiles()) {
@@ -13,7 +15,7 @@ public class FunctionJob {
 			try {
 				functions = function.newInstance();
 				functions.setFilePath(f.getAbsolutePath());
-				functions.setOpPath("Files\\Out" + fCount++ + System.nanoTime() + ".txt");
+				functions.setOpPath(MainJobClass.filePath + "\\Output" + fCount++ + System.nanoTime() + ".txt");
 				new Thread(group, functions).start();
 			} catch (InstantiationException | IllegalAccessException e1) {
 				// TODO Auto-generated catch block

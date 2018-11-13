@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 
+import com.driver.MainJobClass;
 import com.shuffle.ShuffleKeys;
 
 public class SortAndMerge {
@@ -16,7 +17,7 @@ public class SortAndMerge {
 
 	public void run() {
 		try {
-			File file = new File("Files");
+			File file = new File(MainJobClass.filePath);
 			sortFile(file);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -53,7 +54,7 @@ public class SortAndMerge {
 	private void sortFiles(File file) throws IOException {
 		ThreadGroup group = new ThreadGroup("Sort group");
 		for (File f : file.listFiles()) {
-			File fi = new File(f.getParentFile().getAbsolutePath() + "\\" + f.getName().split("\\.")[0] + "sorted.txt");
+			File fi = new File(MainJobClass.filePath + "\\" + f.getName().split("\\.")[0] + "sorted.txt");
 			fi.createNewFile();
 			SortSingleFile sortSingleFile = new SortSingleFile(f, fi);
 			new Thread(group, sortSingleFile).start();
@@ -83,8 +84,7 @@ public class SortAndMerge {
 				if (rCount % 2 == 0) {
 					fileOne = f;
 				} else {
-					File fi = new File(
-							fileOne.getParentFile().getAbsolutePath() + "\\" + fileCount + System.nanoTime() + ".txt");
+					File fi = new File(MainJobClass.filePath + "\\" + fileCount + System.nanoTime() + ".txt");
 					MergeTwoFiles mergeTwoFiles = new MergeTwoFiles(fileOne, f, fi);
 					new Thread(combineGroup, mergeTwoFiles).start();
 				}

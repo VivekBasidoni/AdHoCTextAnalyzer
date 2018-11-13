@@ -11,8 +11,8 @@ public class SplitCount extends SplitText {
 	@Override
 	public String getData(String data) {
 		// TODO Auto-generated method stub
-		String key = (data.split("\\,")[2]).replaceAll("[^a-zA-Z0-9]", "").toUpperCase();
-		return key + "&&" + data.split("\\,")[2];
+		String key = (data.split("\\;")[2]).replaceAll("[^a-zA-Z0-9]", "").toUpperCase();
+		return key + "&&" + data.split("\\;")[4];
 	}
 
 }

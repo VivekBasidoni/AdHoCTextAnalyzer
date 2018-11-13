@@ -12,8 +12,14 @@ public class FunctionGroupBy extends Function {
 	protected Map<String, String> applyFunction(String k, List<String> values) {
 		Map<String, String> map = new HashMap<>();
 		double sum = 0;
+		Double doubleVal;
 		for (String vals : values) {
-			sum += Double.parseDouble(vals);
+			try {
+				doubleVal = Double.parseDouble(vals);
+			} catch (NumberFormatException exception) {
+				doubleVal = (double) 0;
+			}
+			sum += doubleVal;
 		}
 		map.put(k, sum + "");
 		return map;

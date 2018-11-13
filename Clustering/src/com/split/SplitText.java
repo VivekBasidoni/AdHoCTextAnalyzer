@@ -9,6 +9,8 @@ import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+import com.driver.MainJobClass;
+
 public abstract class SplitText implements Runnable {
 	String inputfile;
 	double nol;
@@ -52,7 +54,7 @@ public abstract class SplitText implements Runnable {
 			String strLine;
 
 			for (int j = 1; j <= nof; j++) {
-				FileWriter fstream1 = new FileWriter("Files\\file" + fileCount + j + ".txt");
+				FileWriter fstream1 = new FileWriter(MainJobClass.filePath + "\\" + fileCount + j + ".txt");
 				BufferedWriter out = new BufferedWriter(fstream1);
 				for (int i = 1; i <= nol; i++) {
 					strLine = br.readLine();
@@ -70,6 +72,7 @@ public abstract class SplitText implements Runnable {
 			scanner.close();
 		} catch (Exception e) {
 			System.err.println("Error: " + e.getMessage());
+			e.printStackTrace();
 		}
 		fileCount++;
 	}
